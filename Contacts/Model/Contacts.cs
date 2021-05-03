@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Contacts.Model
+namespace Contacts.Entity.Model
 {
-    class Contacts
+    public class Contacts
     {
         public int ContactID { get; set; }
         public string Name { get; set; }

@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entity", "Entity", "{798F1577-50EF-4695-89BA-09EC77554EBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.Data", "Contacts.Data\Contacts.Data.csproj", "{07DCBF15-0ADA-4CE7-A9BB-31C3AD4415DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.Data", "Contacts.Data\Contacts.Data.csproj", "{07DCBF15-0ADA-4CE7-A9BB-31C3AD4415DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts", "Contacts\Contacts.csproj", "{0C905DC8-762B-44B5-A4CE-766CA9A603EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.Entity", "Contacts\Contacts.Entity.csproj", "{0C905DC8-762B-44B5-A4CE-766CA9A603EF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{B830CC2F-58D2-483A-85B2-BD7ACDB41361}"
 EndProject
