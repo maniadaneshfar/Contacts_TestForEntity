@@ -32,9 +32,15 @@ namespace Contact.Forms
             this.btnAddNewContact = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.grpSearch = new System.Windows.Forms.GroupBox();
-            this.lblName = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lblName = new System.Windows.Forms.Label();
             this.dgvContacts = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.grpSearch.SuspendLayout();
@@ -49,6 +55,7 @@ namespace Contact.Forms
             this.btnAddNewContact.TabIndex = 0;
             this.btnAddNewContact.Text = "افزودن شخص جدید";
             this.btnAddNewContact.UseVisualStyleBackColor = true;
+            this.btnAddNewContact.Click += new System.EventHandler(this.btnAddNewContact_Click);
             // 
             // btnRefresh
             // 
@@ -58,6 +65,7 @@ namespace Contact.Forms
             this.btnRefresh.TabIndex = 1;
             this.btnRefresh.Text = "تازه سازی";
             this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // grpSearch
             // 
@@ -70,6 +78,14 @@ namespace Contact.Forms
             this.grpSearch.TabStop = false;
             this.grpSearch.Text = "جست و جو";
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(266, 34);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(380, 22);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
@@ -79,21 +95,69 @@ namespace Contact.Forms
             this.lblName.TabIndex = 0;
             this.lblName.Text = "نام و نام خانوادگی:";
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(266, 34);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(380, 22);
-            this.txtSearch.TabIndex = 1;
-            // 
             // dgvContacts
             // 
+            this.dgvContacts.AllowUserToAddRows = false;
+            this.dgvContacts.AllowUserToDeleteRows = false;
+            this.dgvContacts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvContacts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvContacts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6});
             this.dgvContacts.Location = new System.Drawing.Point(12, 144);
             this.dgvContacts.Name = "dgvContacts";
+            this.dgvContacts.ReadOnly = true;
             this.dgvContacts.RowTemplate.Height = 25;
             this.dgvContacts.Size = new System.Drawing.Size(776, 222);
             this.dgvContacts.TabIndex = 3;
+            this.dgvContacts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContacts_CellContentClick);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ContactID";
+            this.Column1.HeaderText = "ContactID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Name";
+            this.Column2.HeaderText = "نام";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Family";
+            this.Column3.HeaderText = "نام خانوادگی";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Mobile";
+            this.Column4.HeaderText = "تلفن همراه";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Email";
+            this.Column5.HeaderText = "ایمیل";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "Address";
+            this.Column6.HeaderText = "آدرس";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
             // 
             // btnEdit
             // 
@@ -103,6 +167,7 @@ namespace Contact.Forms
             this.btnEdit.TabIndex = 4;
             this.btnEdit.Text = "ویرایش";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -112,6 +177,7 @@ namespace Contact.Forms
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "حذف";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // frmMyContact
             // 
@@ -130,6 +196,7 @@ namespace Contact.Forms
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "دفترچه تلفن من";
+            this.Load += new System.EventHandler(this.frmMyContact_Load);
             this.grpSearch.ResumeLayout(false);
             this.grpSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContacts)).EndInit();
@@ -147,6 +214,12 @@ namespace Contact.Forms
         private System.Windows.Forms.DataGridView dgvContacts;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
 

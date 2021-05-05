@@ -6,4 +6,9 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Contacts.Data\Contacts.Data.csproj" />
+    <ProjectReference Include="..\Contacts\Contacts.Entity.csproj" />
+  </ItemGroup>
+
 </Project>
