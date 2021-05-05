@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Contact.Form1.Forms
+namespace Contact.Forms
 {
-    public partial class EditContact : Form
+    public partial class frmEditContact : Form
     {
-        public EditContact()
+        public frmEditContact()
         {
             InitializeComponent();
         }
